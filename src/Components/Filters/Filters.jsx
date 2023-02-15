@@ -27,9 +27,9 @@ function Select({ options, value, onChange, name }) {
       <option value="Selected Option">Selected Option</option>
 
       {options.length !== 0 &&
-        options.map((option) => (
-          <option key={option.id} value={option.name}>
-            {option.name}
+        options.map((e) => (
+          <option key={e.id} value={e.name}>
+            {e.name}
           </option>
         ))}
     </select>
