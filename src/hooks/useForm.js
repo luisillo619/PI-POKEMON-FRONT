@@ -103,7 +103,7 @@ function useForm(initialForm, validateForm) {
 
   const handleKeyUp = (e) => {
     let { value } = e.target;
-    if (e.code === "Enter") {
+    if (e.code === "Enter" || e.key === "Enter" || e.event.keyCode === 13) {
       if (errors.type === "Enter para agregar") {
         const removeOptions = options.filter((e) => {
           return e.name !== value.toLowerCase();
