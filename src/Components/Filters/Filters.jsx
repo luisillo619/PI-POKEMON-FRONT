@@ -26,12 +26,12 @@ function Select({ options, value, onChange, name }) {
     >
       <option value="Selected Option">Selected Option</option>
 
-      {options.length !== 0 &&
+      {/* {options.length !== 0 &&
         options.map((e) => (
           <option key={e.id} value={e.name}>
             {e.name}
           </option>
-        ))}
+        ))} */}
     </select>
   );
 }
