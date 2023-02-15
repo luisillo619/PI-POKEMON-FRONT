@@ -2,7 +2,7 @@ import React from "react";
 import useFilter from "../../hooks/useFilter";
 import { optionsSorted } from "../../helpers/options";
 import "./Filters.css";
-import pikachuIcon from "../../assets/pikachu_icon-icons.com_67535.png"
+import pikachuIcon from "../../assets/pikachu_icon-icons.com_67535.png";
 import { filterAttack } from "../../redux/actions";
 import { useDispatch } from "react-redux";
 // Estado Inicial
@@ -11,27 +11,31 @@ const initialState = {
   pokemonsSorted: "",
   pokemonsTypes: "",
   pokemonNames: "",
-  pokemonAttack: ""
+  pokemonAttack: "",
 };
-
-
 
 // Componente que ayuda a rendirizar select-option, en los input de filtrado
 function Select({ options, value, onChange, name }) {
-  return (
-
-      <select  className="" id={name} name={name} value={value} onChange={onChange}>
+  if (options) {
+    return (
+      <select
+        className=""
+        id={name}
+        name={name}
+        value={value}
+        onChange={onChange}
+      >
         <option value="Selected Option">Selected Option</option>
+
         {options.map((option) => (
           <option key={option.id} value={option.name}>
             {option.name}
           </option>
         ))}
       </select>
-
-  );
+    );
+  }
 }
-
 
 // Se envia el estado con todas las validaciones a redux
 const filterValidations = (state, dispatch, addFilter) => {
@@ -55,23 +59,19 @@ const filterValidations = (state, dispatch, addFilter) => {
   dispatch(addFilter(validations));
 };
 
-
 // Componente que guarda un estado de todos los filtros y ordenamientos que se apliquen a los Pokemons
 const Filters = () => {
-
   // Se mandan como props el validador y el estado inicial a useFilter
   const { state, handleChange, pokemons, nameOptions, handleClick, types } =
     useFilter(filterValidations, initialState);
 
   // Renderizado de las opciones para filtrar
 
- 
   return (
     <div className="container-Filters">
-
-       {/*---------- pokemonNames-------------- */}
-       <div className="container-Generale__SearchName">
-         <div className="container-SearchName">
+      {/*---------- pokemonNames-------------- */}
+      <div className="container-Generale__SearchName">
+        <div className="container-SearchName">
           <div className="container-Search">
             <p htmlFor="pokemonNames">Name</p>
             <input
@@ -91,18 +91,18 @@ const Filters = () => {
             <p>Busca tu Pokémon favorito por su nombre</p>
           </div>
         </div>
-         {/* reiniciar */}
+        {/* reiniciar */}
         <div className="boton-Reset">
-          <button onClick={handleClick}><img src={pikachuIcon} alt="" /></button>
+          <button onClick={handleClick}>
+            <img src={pikachuIcon} alt="" />
+          </button>
         </div>
-       
-       </div>
+      </div>
       {/*------------------------------------------------------- */}
-      
-      <div className="containerFrom_Sort">
-      {/* pokemonsFrom */}
-        <div className="container-From">
 
+      <div className="containerFrom_Sort">
+        {/* pokemonsFrom */}
+        <div className="container-From">
           <div className="container-From_All">
             <label htmlFor="All pokemons">All pokemons</label>
             <input
@@ -112,7 +112,6 @@ const Filters = () => {
               onChange={handleChange}
               value="All pokemons"
               checked={state.pokemonsFrom === "All pokemons"}
-            
             />
           </div>
 
@@ -140,10 +139,10 @@ const Filters = () => {
             />
           </div>
         </div>
-        
+
         <div className="container-Sort_Types">
-           {/* pokemonsSorted */}
-          <div className='container-Sort'>
+          {/* pokemonsSorted */}
+          <div className="container-Sort">
             <label htmlFor="pokemonsSorted">Pokémon by </label>
             <Select
               options={optionsSorted}
@@ -164,9 +163,6 @@ const Filters = () => {
           </div>
         </div>
       </div>
-
-  
-      
     </div>
   );
 };
