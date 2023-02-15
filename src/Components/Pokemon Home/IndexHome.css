@@ -1,0 +1,21 @@
+.containerIndexHome {
+  padding: 5px 10%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  /* background-image: url(../../../src/assets/5f49e8620a76d4c129a39fc39c3570d1.jpg); */
+  /* background-position: center;
+  background-attachment: fixed;
+  background-size: cover; */
+ background: rgb(234, 234, 234);
+}
+
+.red {
+  border: 111px solid yellow;
+}
+
+.navBar-Pokemon{
+  width: 90%;
+}

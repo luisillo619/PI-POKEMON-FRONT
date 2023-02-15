@@ -1,0 +1,58 @@
+.button {
+    height: 40px;
+    width: 40px;
+    margin: 10px 0;
+    font-size: 20px;
+    background: #30A7D7;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+}
+  
+.active {
+  background: #1B53BA;
+  }
+
+.containerNumberPages {
+  display: flex;
+  margin: 0 auto;
+  justify-content: space-between;
+  width: 300px;
+}
+
+.containerBoronesPaginado {
+  display: inline-block;
+  flex-wrap: wrap;
+
+}
+
+.containerNextPrev {
+  display: flex;
+  justify-content: space-between;
+}
+
+.botonPrev, .botonNext {
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  height: 30px;
+  width: 60px;
+  background: #e83626;
+  border: none;
+  border-radius: 3px;
+}
+
+
+@media screen and (max-width: 333px) {
+  .button {
+    height: 30px;
+    width: 30px;
+    margin: 5px;
+    font-size: 16px;
+  }
+
+  .containerNumberPages {
+    width: 250px;
+  }
+}

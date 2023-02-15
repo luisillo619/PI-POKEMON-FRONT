@@ -1,0 +1,140 @@
+.navBar-create {
+  width: 90%;
+}
+
+.container-CreatePokemon{
+  padding: 5px 10%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  background: rgb(234, 234, 234);
+}
+
+.container-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.form-container {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.create-pokemon__form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  border-radius: 30px;
+  background: rgb(228, 227, 227);
+  min-height: 700px;
+}
+
+
+
+.create-pokemon__form > * {
+  padding: 0.7em;
+}
+
+.create-pokemon__form input,
+.create-pokemon__form select {
+  width: 80%;
+  padding: 0.8em;
+  border: none;
+  outline: none;
+  margin-top: 1em;
+}
+
+.create-pokemon__form select option {
+  text-align: center;
+}
+
+/*-------------Tipos seleccionados----------------- */
+.create-pokemon-selected-container {
+  margin-left: 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+ 
+}
+
+.create-pokemon-selected{
+  font-size: 13px;
+  color: white;
+}
+
+/* Todos los label */
+.create-pokemon__label {
+  color: #489e55d2;
+  font-weight: bold;
+  font-size: 20px;
+  font-family: "Flexo-Demi", sans-serif;
+}
+
+/* Todos los select */
+.create-pokemon__select {
+  border-radius: 13px;
+}
+
+/* Todos los input */
+.create-pokemon__input {
+  border-radius: 13px;
+}
+
+/* Todos los errors */
+.create-pokemon__error {
+  font-family: "Flexo-Demi", serif;
+  font-size: 16px;
+  font-weight: bold;
+  color: #948989;
+}
+
+/* Boton crear */
+.create-pokemon__button {
+  background: #F94144;
+  border-radius: 5px;
+  width: 100%;
+  font-size: 18px;
+  color: white;
+  font-weight: bold;
+ }
+ 
+ .create-pokemon__button:hover {
+   cursor: pointer;
+ }
+
+
+@media screen and (max-width: 1215px) {
+  .form-container {
+    width: 67%;
+  }
+}
+
+@media screen and (max-width: 990px) {
+  .container {
+    align-items: center;
+  }
+  .form-container {
+    width: 83%;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .create-pokemon__form {
+    padding: 1em;
+    display: block;
+  }
+  .form-container {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .create-pokemon__form {
+    padding: 0.5em;
+  }
+  .form-container {
+    width: 110%;
+  }
+}
