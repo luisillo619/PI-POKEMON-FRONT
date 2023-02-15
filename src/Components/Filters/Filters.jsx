@@ -16,24 +16,26 @@ const initialState = {
 
 // Componente que ayuda a rendirizar select-option, en los input de filtrado
 function Select({ options, value, onChange, name }) {
-  return (
-    <select
-      className=""
-      id={name}
-      name={name}
-      value={value}
-      onChange={onChange}
-    >
-      <option value="Selected Option">Selected Option</option>
+  if (options) {
+    return (
+      <select
+        className=""
+        id={name}
+        name={name}
+        value={value}
+        onChange={onChange}
+      >
+        <option value="Selected Option">Selected Option</option>
 
-      {/* {options.length !== 0 &&
-        options.map((e) => (
-          <option key={e.id} value={e.name}>
-            {e.name}
-          </option>
-        ))} */}
-    </select>
-  );
+        {/* {options.length !== 0 &&
+          options.map((e) => (
+            <option key={e.id} value={e.name}>
+              {e.name}
+            </option>
+          ))} */}
+      </select>
+    );
+  } else return <option value="Selected Option">Selected Option</option>;
 }
 
 // Se envia el estado con todas las validaciones a redux
