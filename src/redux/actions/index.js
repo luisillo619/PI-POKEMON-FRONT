@@ -12,8 +12,9 @@ import {
   DELETE_POKEMON,
 } from "../types/index";
 const { REACT_APP_API_URL } = process.env;
+
 export const getPokemons = () => (dispatch) => {
-  return fetch(`${REACT_APP_API_URL}pokemons`)
+  return fetch(`${REACT_APP_API_URL}/pokemons`)
     .then((res) => res.json())
     .then((pokemons) =>
       dispatch({
@@ -31,7 +32,7 @@ export const getPokemons = () => (dispatch) => {
 };
 
 export const getOnePokemonID = (id) => (dispatch) => {
-  return fetch(`${REACT_APP_API_URL}pokemons/${id}`)
+  return fetch(`${REACT_APP_API_URL}/pokemons/${id}`)
     .then((res) => res.json())
     .then((pokemon) =>
       dispatch({
@@ -56,7 +57,7 @@ export const resetOnePokemonID = () => {
 };
 
 export const getOnePokemonName = (name) => (dispatch) => {
-  return fetch(`${REACT_APP_API_URL}pokemons?name=${name}`)
+  return fetch(`${REACT_APP_API_URL}/pokemons?name=${name}`)
     .then((res) => res.json())
     .then((pokemon) =>
       dispatch({
@@ -74,7 +75,7 @@ export const getOnePokemonName = (name) => (dispatch) => {
 };
 
 export const getTypes = () => (dispatch) => {
-  return fetch(`${REACT_APP_API_URL}types`)
+  return fetch(`${REACT_APP_API_URL}/types`)
     .then((res) => res.json())
     .then((types) =>
       dispatch({
@@ -128,7 +129,7 @@ export const postPokemon = (form, initialForm, setForm) => (dispatch) => {
     body: JSON.stringify(form),
   };
 
-  return fetch(`${REACT_APP_API_URL}create`, options)
+  return fetch(`${REACT_APP_API_URL}/create`, options)
     .then(() =>
       dispatch({
         type: RELOAD_POKEMONS,
@@ -153,7 +154,7 @@ export const deletePokemon = (id) => (dispatch) => {
     method: "DELETE",
   };
 
-  return fetch(`${REACT_APP_API_URL}delete/${id}`, options)
+  return fetch(`${REACT_APP_API_URL}/delete/${id}`, options)
     .then(() =>
       dispatch({
         type: DELETE_POKEMON,
